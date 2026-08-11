@@ -29,11 +29,11 @@ export default function Home() {
         {/* Call to Action Buttons */}
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <Link
-            href="#projects"
-            className="rounded-md bg-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 transition-colors"
-          >
-            Explore AI RAG Pipeline
-          </Link>
+  href="/projects/rag-engine"
+  className="rounded-md bg-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 transition-colors"
+>
+  Explore AI RAG Pipeline
+</Link>
           <Link
             href="#experience"
             className="text-sm font-semibold leading-6 text-slate-200 hover:text-white transition-colors"
