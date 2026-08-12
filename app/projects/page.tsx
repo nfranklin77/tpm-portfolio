@@ -50,56 +50,68 @@ export default function ProjectsHub() {
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
           
           {/* Agentic PMO */}
-          <div className="rounded-lg border border-slate-800 border-dashed bg-slate-950 p-8 opacity-80">
+          <Link 
+            href="/projects/agentic-pmo"
+            className="block group rounded-lg border border-slate-800 border-dashed bg-slate-950 p-8 opacity-80 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/50 hover:bg-slate-900 hover:opacity-100 hover:shadow-lg hover:shadow-emerald-500/10"
+          >
             <div className="flex justify-between items-center mb-3">
-              <h3 className="text-xl font-bold text-slate-300">Agentic PMO Orchestrator</h3>
+              <h3 className="text-xl font-bold text-slate-300 transition-colors group-hover:text-emerald-300">Agentic PMO Orchestrator</h3>
               <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-400 border border-slate-700">
                 In Progress
               </span>
             </div>
-            <p className="text-sm text-slate-500 leading-relaxed mb-4">
+            <p className="text-sm text-slate-500 leading-relaxed mb-4 group-hover:text-slate-400 transition-colors">
               A multi-agent workflow utilizing LangGraph and the Model Context Protocol (MCP) to automate dependency tracking, risk escalation, and executive reporting across simulated Agile delivery tools.
             </p>
-          </div>
+          </Link>
 
           {/* AWS SageMaker */}
-          <div className="rounded-lg border border-slate-800 border-dashed bg-slate-950 p-8 opacity-80">
+          <Link 
+            href="/projects/aws-sagemaker-mlops"
+            className="block group rounded-lg border border-slate-800 border-dashed bg-slate-950 p-8 opacity-80 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/50 hover:bg-slate-900 hover:opacity-100 hover:shadow-lg hover:shadow-emerald-500/10"
+          >
             <div className="flex justify-between items-center mb-3">
-              <h3 className="text-xl font-bold text-slate-300">AWS SageMaker MLOps</h3>
+              <h3 className="text-xl font-bold text-slate-300 transition-colors group-hover:text-emerald-300">AWS SageMaker MLOps</h3>
               <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-400 border border-slate-700">
                 Architecting
               </span>
             </div>
-            <p className="text-sm text-slate-500 leading-relaxed mb-4">
+            <p className="text-sm text-slate-500 leading-relaxed mb-4 group-hover:text-slate-400 transition-colors">
               An enterprise cloud-native deployment pipeline demonstrating IAM security compliance, model registry orchestration, and endpoint provisioning within AWS ecosystem constraints.
             </p>
-          </div>
+          </Link>
 
           {/* LLMOps Governance */}
-          <div className="rounded-lg border border-slate-800 border-dashed bg-slate-950 p-8 opacity-80">
+          <Link 
+            href="/projects/llmops-governance"
+            className="block group rounded-lg border border-slate-800 border-dashed bg-slate-950 p-8 opacity-80 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/50 hover:bg-slate-900 hover:opacity-100 hover:shadow-lg hover:shadow-emerald-500/10"
+          >
             <div className="flex justify-between items-center mb-3">
-              <h3 className="text-xl font-bold text-slate-300">LLMOps Governance Pipeline</h3>
+              <h3 className="text-xl font-bold text-slate-300 transition-colors group-hover:text-emerald-300">LLMOps Governance Pipeline</h3>
               <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-400 border border-slate-700">
                 Planned
               </span>
             </div>
-            <p className="text-sm text-slate-500 leading-relaxed mb-4">
+            <p className="text-sm text-slate-500 leading-relaxed mb-4 group-hover:text-slate-400 transition-colors">
               A continuous integration guardrail system utilizing LangSmith and LlamaGuard to track inference latency, token cloud costs, and output safety for commercial GA readiness.
             </p>
-          </div>
+          </Link>
 
           {/* Edge AI */}
-          <div className="rounded-lg border border-slate-800 border-dashed bg-slate-950 p-8 opacity-80">
+          <Link 
+            href="/projects/edge-ai"
+            className="block group rounded-lg border border-slate-800 border-dashed bg-slate-950 p-8 opacity-80 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/50 hover:bg-slate-900 hover:opacity-100 hover:shadow-lg hover:shadow-emerald-500/10"
+          >
             <div className="flex justify-between items-center mb-3">
-              <h3 className="text-xl font-bold text-slate-300">Silicon-Optimized Edge AI</h3>
+              <h3 className="text-xl font-bold text-slate-300 transition-colors group-hover:text-emerald-300">Silicon-Optimized Edge AI</h3>
               <span className="rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-400 border border-slate-700">
                 Planned
               </span>
             </div>
-            <p className="text-sm text-slate-500 leading-relaxed mb-4">
+            <p className="text-sm text-slate-500 leading-relaxed mb-4 group-hover:text-slate-400 transition-colors">
               A hardware-constrained deployment utilizing model quantization (4-bit) and portable Docker containerization to run GenAI inferences on low-power edge devices with zero cloud latency.
             </p>
-          </div>
+          </Link>
 
         </div>
       </div>
