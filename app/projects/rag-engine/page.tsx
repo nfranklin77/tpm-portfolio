@@ -6,8 +6,12 @@ export default function RagEngineProject() {
       <div className="mx-auto max-w-4xl">
         
         {/* Back Navigation */}
-        <Link href="/" className="text-emerald-400 hover:text-emerald-300 text-sm font-semibold transition-colors">
-          &larr; Back to Overview
+        <Link 
+          href="/projects" 
+          className="group mb-8 inline-flex items-center text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+        >
+          <span className="mr-2 transition-transform group-hover:-translate-x-1">←</span>
+          Back to Projects
         </Link>
         
         {/* Project Header */}

@@ -5,8 +5,17 @@ export default function ProjectsHub() {
     <main className="min-h-screen bg-slate-950 px-6 py-24 text-slate-50 sm:px-12">
       <div className="mx-auto max-w-5xl">
         
+        {/* Back Navigation */}
+        <Link 
+          href="/" 
+          className="group mb-8 inline-flex items-center text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+        >
+          <span className="mr-2 transition-transform group-hover:-translate-x-1">←</span>
+          Back to Overview
+        </Link>
+        
         {/* Header */}
-        <h1 className="mt-8 text-4xl font-extrabold tracking-tight sm:text-5xl">
+        <h1 className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">
           Technical Architecture & AI Delivery
         </h1>
         <p className="mt-4 text-xl text-slate-400">

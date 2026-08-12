@@ -21,14 +21,7 @@ export default function RootLayout({
         
         {/* Global Navigation Bar */}
         <nav className="fixed top-0 w-full z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
-          <div className="mx-auto max-w-5xl px-6 sm:px-12 h-16 flex items-center justify-between">
-            {/* Logo / Name */}
-            <Link 
-              href="/" 
-              className="text-lg font-bold tracking-wide text-slate-200 hover:text-emerald-400 transition-colors"
-            >
-              N. FRANKLIN
-            </Link>
+          <div className="mx-auto max-w-5xl px-6 sm:px-12 h-16 flex items-center justify-end">
             
             {/* Nav Links */}
             <div className="flex gap-8 text-sm font-semibold text-slate-400">
@@ -39,6 +32,7 @@ export default function RootLayout({
                 Experience
               </Link>
             </div>
+            
           </div>
         </nav>
 
