@@ -1,28 +1,44 @@
 "use client";
 
+import React, { useState } from "react";
 import Link from "next/link";
-import { useState } from "react";
 
-// 1. Define the Timeline Data Structure
-const timelineData = [
+// Explicitly type the timeline data so TypeScript allows HTML elements (Hyperlinks) in the bullets
+type TimelineItem = {
+  id: number;
+  title: string;
+  company: string;
+  summary: string;
+  extendedBullets: React.ReactNode[];
+};
+
+const timelineData: TimelineItem[] = [
   {
     id: 1,
     title: "Solutions Engineer",
     company: "Nakupuna Companies | Jan 2024 – Aug 2026",
-    summary: "Managed technical intake pipelines and program governance across enterprise defense portfolios. Served as the government-designated Key Personnel driving multi-team cloud modernization for the $370M Army IPPS-A deployment before transitioning internally to direct delivery cycles and cross-system alignment for a dedicated Navy portfolio.",
+    summary: "Managed technical intake pipelines and program governance across enterprise defense portfolios. Served as Key Personnel driving multi-team cloud modernization efforts and cross-functional release readiness.",
     extendedBullets: [
-      "[Add your unpublished metric or outcome here... e.g., 'Scaled X teams to achieve Y% increase in deployment velocity.']",
-      "[Add deep-dive technical accomplishment here... e.g., 'Architected zero-trust compliance framework across Z systems.']",
+      "Directed quarterly engineering roadmaps and delivery cycles from discovery through release for 20+ distributed development teams, owning dependency tracking, risk mitigation, and cross-system alignment.",
+      "Built program-wide data capture strategies using Azure DevOps and Power BI for executive reporting, improving integrated delivery schedules by 30% and reducing post-release defects by 15%.",
+      "Managed technical intake pipelines and established enterprise change control standards to ensure multi-team cloud modernization efforts tracked directly to intended business outcomes.",
+      <span>
+        Served as Key Personnel driving the <a href="https://www.washingtontechnology.com/contracts/2024/07/army-chooses-newcomer-370m-payroll-system-recompete/398047/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 hover:underline transition-colors font-semibold">$370M Army IPPS-A deployment</a>, overseeing capacity planning frameworks and post-launch value realization.
+      </span>,
     ],
   },
   {
     id: 2,
     title: "Digital Transformation Lead",
     company: "DLH Corporation | Apr 2017 – Jan 2024",
-    summary: "Accelerated the multi-billion-dollar MHS Genesis deployment by replacing heavy governance with lean execution playbooks. Aligned 60+ distributed product teams, upskilled 100+ developers, boosted overall software release velocity by 20%, and received a FedHealthIT Innovation Award for technical playbook design.",
+    summary: "Accelerated the multi-billion-dollar MHS Genesis deployment by replacing heavy DoD governance with lean execution playbooks, aligning 60+ distributed product teams to sustain rapid engineering velocity.",
     extendedBullets: [
-      "[Insert specific Agile coaching breakthrough or metric...]",
-      "[Detail the playbook creation process that won the FedHealthIT Innovation Award...]",
+      <span>
+        Accelerated the <a href="https://www.potomacofficersclub.com/articles/mhs-genesis-military-health-system-ehr/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 hover:underline transition-colors font-semibold">multi-billion-dollar MHS Genesis deployment</a> by replacing heavy DoD governance with lean execution playbooks, aligning 60+ distributed product teams.
+      </span>,
+      "Used delivery metrics to clear blocked initiatives and upskilled 100+ developers, boosting overall software release velocity by 20%.",
+      "Won a FedHealthIT Innovation Award for designing a digital playbook that aligned technical construction methods with the organization's evolving maturity goals.",
+      "Coached engineering leads and product managers, establishing standardized sprint planning, backlog refinement, and retrospective cadences.",
     ],
   },
   {
@@ -31,18 +47,22 @@ const timelineData = [
     company: "Franklin Consulting Group, LLC | Feb 2012 – Mar 2017",
     summary: "Established a Technical Delivery Office for cloud-native applications at FINRA. Managed distributed engineering teams at Capital One to accelerate legacy monolith-to-microservices migrations. Led executive steering and AWS cloud integrations for The Carlyle Group.",
     extendedBullets: [
-      "[Highlight specific API blocker resolutions at Capital One...]",
-      "[Discuss executive steering strategies used at The Carlyle Group...]",
+      "FINRA (System-of-Record Governance): Established a Technical Delivery Office for cloud-native applications and built dashboards to track release burn-up, code quality, and backlog health.",
+      "Capital One (Technical Orchestration): Managed delivery across distributed engineering teams, clearing API blockers to accelerate legacy monolith-to-microservices migrations.",
+      "The Carlyle Group (Executive Steering): Led executive steering and managed vendor cloud (AWS) integrations to proactively escalate risks and deliver actionable recommendations.",
+      "American Red Cross: Managed the end-to-end lifecycle replacement of on-premise document repository systems, migrating 30TB of data for 60K users to cloud infrastructure.",
     ],
   },
   {
     id: 4,
-    title: "Federal IT & Technical Program Management",
+    title: "Technical Project Manager",
     company: "VA, DTRA, AT&T, & PwC | Sep 2006 – Feb 2012",
     summary: "Built a foundation in enterprise scale integration, delivering a $10M classified VPN deployment for Joint Forces, executing NIST vulnerability assessments, and managing $11M enterprise Knowledge Management COTS solutions across multiple federal agencies.",
     extendedBullets: [
-      "[Expand on the zero-downtime VPN deployment...]",
-      "[Detail the 40% reduction in FISMA compliance deficiencies at the FBI...]",
+      "Data Architecture (VA): Delivered an $11M enterprise Knowledge Management COTS solution, establishing integrated master schedules and managing performance metrics for project risk-related events.",
+      "Enterprise Compliance (DTRA): Executed DoD 8510/NIST 800-series vulnerability assessments to maintain continuous system authorizations and authored foundational risk management policies.",
+      "Enterprise Scale Integration (AT&T): Delivered a $10M classified VPN deployment and 60+ secure network projects for the DoD with a 100% success rate (zero downtime) in 3 years.",
+      "Federal IT Governance (PwC): Directed federal IT control remediation and business process reengineering for the FBI, reducing FISMA compliance deficiencies by 40%.",
     ],
   },
   {
@@ -51,14 +71,15 @@ const timelineData = [
     company: "United States Air Force | Jan 2002 – Sep 2006",
     summary: "Exercised mission command and technical mentorship over 60+ active-duty engineers. Engineered secure, tactical infrastructure for 25K+ warfighters during forward-deployment missions in Afghanistan and Qatar during the initial months of Operation Enduring Freedom.",
     extendedBullets: [
-      "[Share specific expeditionary systems delivery outcomes...]",
-      "[Highlight leadership tactics used in forward-deployed environments...]",
+      "Expeditionary Systems Delivery: Exercised mission command and technical mentorship over 60+ active-duty engineers, managing over $123M in network assets.",
+      "Engineered secure, tactical infrastructure for 25K+ warfighters during forward-deployment missions in Afghanistan and Qatar during the initial months of Operation Enduring Freedom.",
+      "Directed a $3M network backbone upgrade and a $2M multi-vendor wireless VPN deployment, receiving the USAF Achievement Medal for successful implementation.",
+      "Performed 24x7 computer network defense (CND) incident handling and co-authored the USCYBERCOM Network Watch Officer standard operating procedures.",
     ],
   },
 ];
 
 export default function Experience() {
-  // 2. State to track which timeline item is expanded
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
   const toggleExpand = (id: number) => {
@@ -68,11 +89,6 @@ export default function Experience() {
   return (
     <main className="min-h-screen bg-slate-950 px-6 py-24 text-slate-50 sm:px-12">
       <div className="mx-auto max-w-4xl">
-        
-        {/* Back Navigation */}
-        <Link href="/" className="text-emerald-400 hover:text-emerald-300 text-sm font-semibold transition-colors">
-          &larr; Back to Overview
-        </Link>
         
         {/* Header */}
         <h1 className="mt-8 text-4xl font-extrabold tracking-tight sm:text-5xl">
@@ -90,7 +106,7 @@ export default function Experience() {
             return (
               <div key={item.id} className="relative group">
                 
-                {/* Dynamic Timeline Dot (Now fully driven by hover and expanded state) */}
+                {/* Dynamic Timeline Dot */}
                 <div 
                   className={`absolute -left-[41px] top-1.5 h-4 w-4 rounded-full border-2 bg-slate-950 transition-all duration-300
                     ${isExpanded 
@@ -152,8 +168,8 @@ export default function Experience() {
           
           {/* Card 1 */}
           <div className="group rounded-lg border border-slate-800 bg-slate-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/50 hover:bg-slate-800/50 hover:shadow-lg hover:shadow-emerald-500/10">
-            <h3 className="text-lg font-bold text-slate-200 transition-colors group-hover:text-emerald-300">Post-Graduate Program in AI Agents</h3>
-            <p className="text-emerald-400 font-medium mt-1">University of Texas at Austin</p>
+            <h3 className="text-lg font-bold text-slate-200 transition-colors group-hover:text-emerald-300">Postgraduate Program in AI Agents</h3>
+            <p className="text-emerald-400 font-medium mt-1">UT Austin (In Progress)</p>
             <p className="mt-2 text-sm text-slate-400">
               Focusing on multi-agent architectures (LangGraph), Agentic RAG, and AI evaluation metrics for enterprise business applications.
             </p>
@@ -180,9 +196,10 @@ export default function Experience() {
           {/* Card 4 */}
           <div className="group rounded-lg border border-slate-800 bg-slate-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/50 hover:bg-slate-800/50 hover:shadow-lg hover:shadow-emerald-500/10">
             <h3 className="text-lg font-bold text-slate-200 transition-colors group-hover:text-emerald-300">Professional Certifications</h3>
-            <p className="text-emerald-400 font-medium mt-1">Agile & PMO</p>
+            <p className="text-emerald-400 font-medium mt-1">PMO & Engineering Delivery</p>
             <p className="mt-2 text-sm text-slate-400">
-              Scaled Agile Practice Consultant (SPC) <br/> Project Management Professional (PMP)
+              Project Management Professional (PMP) <br/> 
+              Scaled Agile Practice Consultant (SPC)
             </p>
           </div>
           
