@@ -387,7 +387,25 @@ export default function RagEnginePage() {
               </div>
             ))}
           </div>
+
         </section>
+        {/* 6. Source Code & CI/CD Pipeline Section */}
+        <section className="pt-4">
+            <h2 className="text-2xl font-bold text-slate-200 mb-6 border-b border-slate-800 pb-4">
+              Source Code & CI/CD Pipeline
+            </h2>
+            <p className="text-slate-400 leading-relaxed mb-6">
+              The full Python architecture and continuous deployment configuration are available for review.
+            </p>
+            <a 
+              href="https://github.com/nfranklin77/airgapped-rag-pipeline" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-md bg-slate-800 px-5 py-2.5 text-sm font-semibold text-slate-200 hover:bg-slate-700 transition-colors"
+            >
+              View Repository on GitHub &rarr;
+            </a>
+          </section>
       </div>
     </main>
   );
