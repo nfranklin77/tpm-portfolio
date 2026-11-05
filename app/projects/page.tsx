@@ -43,6 +43,24 @@ export default function ProjectsHub() {
             </p>
           </Link>
 
+          {/* NEW CARD: Guardrailed Clinical AI Agent */}
+          <Link 
+            href="/projects/clinical-ai-agent" 
+            className="block group rounded-lg border border-slate-700 bg-slate-900/60 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/50 hover:bg-slate-800/50 hover:shadow-lg hover:shadow-emerald-500/10"
+          >
+            <div className="flex justify-between items-center mb-3">
+              <h3 className="text-xl font-bold text-slate-200 transition-colors group-hover:text-emerald-300">
+                Guardrailed Clinical AI Agent
+              </h3>
+              <span className="rounded-full bg-emerald-950/80 px-3 py-1 text-xs font-medium text-emerald-400 border border-emerald-800/50">
+                Verified POC
+              </span>
+            </div>
+            <p className="text-sm text-slate-400 leading-relaxed">
+              A safe-by-design LangGraph patient portal assistant integrating deterministic policy routing, scoped SQLite EHR tool-calling, and dual-LLM clinical validation.
+            </p>
+          </Link>
+          
         </div>
 
         {/* In Development Pipeline */}
