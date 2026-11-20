@@ -171,7 +171,7 @@ export default function Experience() {
         </div>
 
         {/* Education Section */}
-        <h2 className="mt-24 text-3xl font-extrabold text-slate-200 border-b border-slate-800 pb-2">Education & Certifications</h2>
+        <h2 className="mt-24 text-3xl font-extrabold text-slate-200 border-b border-slate-800 pb-2">Education</h2>
         
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
           
@@ -201,17 +201,7 @@ export default function Experience() {
               Foundational degree in software engineering, database architecture, and systems analysis.
             </p>
           </div>
-
-          {/* Card 4 */}
-          <div className="group rounded-lg border border-slate-800 bg-slate-900/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/50 hover:bg-slate-800/50 hover:shadow-lg hover:shadow-emerald-500/10">
-            <h3 className="text-lg font-bold text-slate-200 transition-colors group-hover:text-emerald-300">Professional Certifications</h3>
-            <p className="text-emerald-400 font-medium mt-1">PMO & Engineering Delivery</p>
-            <p className="mt-2 text-sm text-slate-400">
-              Project Management Professional (PMP) <br/> 
-              Scaled Agile Practice Consultant (SPC)
-            </p>
-          </div>
-          
+         
         </div>
 
       </div>
